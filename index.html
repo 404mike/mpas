@@ -37,61 +37,27 @@
         <div class="row">
             <div class="col-sm-3 sidebar">
                 <!-- Left column -->
-                <span>Tools</span>
 
-                <hr>
-
+                <span class="pcw-sidebar-item" id="geoJson">geoJson</span>
                 <ul class="nav nav-stacked">
-                    <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Settings</a>
-                        <ul class="nav nav-stacked collapse pcw-map-submenu" id="userMenu">
-                            <li class="active"> <a href="#">Home</a></li>
-                            <li><a href="#">Messages</a></li>
-                            <li><a href="#">Options</a></li>
-                            <li><a href="#">Shoutbox</a></li>
-                            <li><a href="#">Staff List</a></li>
-                            <li><a href="#">Transactions</a></li>
-                            <li><a href="#">Rules</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports</a>
-
-                        <ul class="nav nav-stacked collapse" id="menu2">
-                            <li><a href="#">Information &amp; Stats</a>
-                            </li>
-                            <li><a href="#">Views</a>
-                            </li>
-                            <li><a href="#">Requests</a>
-                            </li>
-                            <li><a href="#">Timetable</a>
-                            </li>
-                            <li><a href="#">Alerts</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-header">
-                        <a href="#" data-toggle="collapse" data-target="#menu3"> Social Media </a>
-                        <ul class="nav nav-stacked collapse pcw-map-submenu" id="menu3">
-                            <li><a href="">Facebook</a></li>
-                            <li><a href="">Twitter</a></li>
+                    <li class="nav-header pcw-maps-sidebar-dropdown">
+                        <ul class="nav nav-stacked pcw-map-submenu" id="geoJson-sub">
                         </ul>
                     </li>
                 </ul>
 
-                <hr>
+                <span class="pcw-sidebar-item" id="pcw-historical-maps">Historical Maps</span>
+                <ul class="nav nav-stacked">
+                    <li class="nav-header pcw-maps-sidebar-dropdown">
 
-                <span>Resources</span>
-
-                <hr>
-
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="nav-header"></li>
-                    <li><a href="#">Layouts &amp; Templates</a></li>
-                    <li><a href="#">Toolbox</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Social Media</a></li>
+                        <ul class="nav nav-stacked pcw-map-submenu" id="pcw-historical-maps-sub">
+                            <li>Bing Hybrid</li>
+                            <li>1st Edition (1868-1892)</li>
+                            <li>2nd Edition (1899-1908)</li>
+                            <li>3rd Edition (1920-1932)</li>
+                            <li>4th Edition (1938-1954)</li>
+                        </ul>
+                    </li>
                 </ul>
 
             </div>
@@ -104,14 +70,12 @@
                     <a href="#" id="info-panel"><strong>My Dashboard</strong></a>
                 </div>
 
-                <hr>
-
                 <div class="row">
                     <!-- center left-->
 
                     <!-- sidebar flyout -->
                     <div class="col-md-6 pcw-sidebar-extra">
-                        <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
+                        
                     </div>
                     <!-- end sidebar flyout -->
 

@@ -12,8 +12,6 @@
     // Set hover colors
     function highlightFeature(e) {
 
-      $("li[data-id='" + this.feature.properties.LAD13CD + "']").css({'color':'red'});
-
       var layer = e.target;
       layer.setStyle({
         weight: 5,
@@ -37,7 +35,6 @@
     function resetHighlight(e) {
       geojson.resetStyle(e.target);
       topLayer.setZIndex(5);
-      $('.location_list').css({'color' : '#000'});
     }
 
     // Tell MapBox.js what functions to call when mousing over and out of a neighborhood
@@ -65,7 +62,7 @@
       var leafletId = layer._leaflet_id;
       // console.log(leafletId)
 
-      $('#place_list').append('<li class="location_list" data-id="'+layerId+'">'+layer.feature.properties.LAD13NM+'</li>');
+      $('#geoJson-sub').append('<li class="location_list" data-id="'+layerId+'">'+layer.feature.properties.LAD13NM+'</li>');
 
       var bounds = layer.getBounds();
 
@@ -107,4 +104,6 @@
       // console.log($(this).data('id'))
       zoomFromClick($(this).data('id'));
       $("li[data-id='" + $(this).data('id') + "']").css({'color':'red'});
+
+      $('.pcw-sidebar-extra').animate({'left':'-350'},100);
     })
