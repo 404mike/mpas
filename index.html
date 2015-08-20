@@ -8,6 +8,8 @@
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
+
     <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -94,7 +96,7 @@
 
             </div>
             <!-- /col-3 -->
-            <div class="col-sm-9">
+            <div class="col-sm-9" id="pcw-map-content">
 
                 <!-- column 2 -->
 
@@ -117,7 +119,7 @@
                     <div class="col-md-6 pcw-map-view">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <div id="map"></div>
                             </div>
                         </div>
                     </div>
@@ -139,6 +141,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src='local.js'></script>
+    <script src="maps.js"></script>
+
 </body>
 
 </html>

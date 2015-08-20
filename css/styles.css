@@ -35,10 +35,15 @@ footer {
   border-radius: 10px;
 }
 
+#pcw-map-content {
+  left: -15px;
+}
+
 .sidebar {
     background-color: #2e2e2e;
     z-index: 2;
     padding: 10px;
+    height: 780px;
 }
 
 .sidebar span{
@@ -61,6 +66,7 @@ footer {
 
 .pcw-map-view{
   width: 100%;
+  /*left: -15px;*/
 }
 
 #pcw-info-panel{
@@ -79,3 +85,23 @@ footer {
 
 
 .foo {margin: 20px 0;}
+
+
+
+
+
+#map {
+  height: 700px;
+  margin: -16px;
+  z-index: 0;
+}
+.leaflet-top-pane {
+  pointer-events: none;
+}
+#places{
+  float: left;
+  width: 15%;
+}
+.location_list{
+  cursor: pointer;
+}
