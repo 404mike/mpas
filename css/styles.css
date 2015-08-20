@@ -43,6 +43,11 @@ footer {
 
 .sidebar span{
   color: #787878;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  margin: 0 0 0 -10px;
 }
 
 .pcw-sidebar-extra {
@@ -65,4 +70,12 @@ footer {
 .pcw-map-submenu{
   padding-left: 20px;
 }
+
+.navbar-header span {
+  color: #9d9d9d;
+  font-size: 1.5em;
+  line-height: 49px;
+}
+
+
 .foo {margin: 20px 0;}
