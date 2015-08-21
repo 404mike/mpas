@@ -42,8 +42,8 @@
       // console.log(feature)
       // console.log(layer)
       layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
+        // mouseover: highlightFeature,
+        // mouseout: resetHighlight,
         click: zoomToFeature
       });
     }
@@ -103,7 +103,7 @@
     $('.location_list').click(function(){
       // console.log($(this).data('id'))
       zoomFromClick($(this).data('id'));
-      $("li[data-id='" + $(this).data('id') + "']").css({'color':'red'});
+      // $("li[data-id='" + $(this).data('id') + "']").css({'color':'red'});
 
       $('.pcw-sidebar-extra').animate({'left':'-350'},100);
     })

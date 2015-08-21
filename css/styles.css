@@ -77,11 +77,26 @@ footer {
 
 .pcw-sidebar-extra {
     background-color: #F7F7F7;
-    height: 400px;
+    /*height: 400px;*/
     z-index: 1;
     position: absolute;
     width: 350px;
     left: -350px;
+}
+
+.pcw-sidebar-extra p {
+  padding: 10px 0;
+}
+
+.pcw-sidebar-extra img{
+  padding: 0 0 10px 0;
+}
+
+#pcw-sidebar-close{
+  float: right;
+  font-size: 1.4em;
+  color: #81818A;
+  cursor: pointer;
 }
 
 .pcw-map-view{

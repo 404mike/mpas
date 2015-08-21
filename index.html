@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
-
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
     <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -67,7 +68,7 @@
                 <!-- column 2 -->
 
                 <div id="pcw-info-panel">                    
-                    <a href="#" id="info-panel"><strong>My Dashboard</strong></a>
+                    <!-- <a href="#" id="info-panel"><strong>My Dashboard</strong></a> -->
                 </div>
 
                 <div class="row">
@@ -75,7 +76,13 @@
 
                     <!-- sidebar flyout -->
                     <div class="col-md-6 pcw-sidebar-extra">
-                        
+                        <span id="pcw-sidebar-close">x</span>
+                        <a target="_blank" class="pcw-sidebar-extra-href" id="pcw-sidebar-extra-image" href="#"></a>
+
+                        <a target="_blank" class="pcw-sidebar-extra-href" href="#"><span id="pcw-sidebar-extra-title"></span></a>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
                     </div>
                     <!-- end sidebar flyout -->
 
@@ -102,14 +109,15 @@
 
 
     <!-- script references -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-
     <script src='https://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
     <script src='local.js'></script>
     <script src="maps.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 
