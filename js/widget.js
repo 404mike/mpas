@@ -320,7 +320,8 @@
         $('#pcw-sidebar-extra-title').html(title);
         $('.pcw-sidebar-extra-href').attr('href' , 'http://www.peoplescollection.wales/node/'+id);
 
-        var rand = Math.floor(Math.random() * 10) + 1  
+        var rand = Math.floor(Math.random() * 9) + 1  
+
 
         $('#pcw-sidebar-extra-image').html('<img src="http://lorempixel.com/335/20'+rand+'/" alt="random image" />');
 
@@ -342,7 +343,7 @@
       }
 
     }
-    
+
 
    /*******************************************************************************************************/
    /**
@@ -450,7 +451,7 @@
     // info panel for clicked markers
     function addToInfoPanel(nid, title) {
       $('.pcw-sidebar-extra-href').attr('href' , 'http://www.peoplescollection.wales/node/'+nid);
-      var rand = Math.floor(Math.random() * 10) + 1  
+      var rand = Math.floor(Math.random() * 9) + 1  
 
       $('#pcw-sidebar-extra-image').html('<img src="http://lorempixel.com/335/20'+rand+'/" alt="random image" />');
       
