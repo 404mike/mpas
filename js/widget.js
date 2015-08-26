@@ -199,46 +199,48 @@
       });      
 
       // trail functions 
-      
+
+
       /**
        * [trail_markers description]
-       * @param  {[type]} data [description]
-       * @return {[type]}      [description]
+       * @param object data [description]
+       * @return null
        */
       function trail_markers(data) {
+      
+        // add trail data to map object
+        map.trailMarkers = data;
 
-          // add trail data to map object
-          map.trailMarkers = data;
+        // loop through all the points
+        $.each(data, function(item,value){
 
-          // loop through all the points
-          $.each(data, function(item,value){
+          var marker = L.marker(new L.LatLng( value.lat, value.lng ), {
+              icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': '0044FF'}),
+              opacity: .7
+          });
 
-            var marker = L.marker(new L.LatLng( value.lat, value.lng ), {
-                icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': '0044FF'}),
-            });
+          // add onClick event to the marker
+          // pass nid and title to the function
+          marker.on('click', function (e) {
 
-            // add onClick event to the marker
-            // pass nid and title to the function
-            marker.on('click', function (e) {
+            trailItemClick(value.id, value.title, this._latlng);
 
-              trailItemClick(value.id, value.title);
-
-              // center map to marker position
-              var lat = e.target._latlng.lat;
-              var lng = e.target._latlng.lng;
-              map.panTo([lat,lng]);
-
-            });
-
-            map.addLayer(marker);
+            // center map to marker position
+            var lat = e.target._latlng.lat;
+            var lng = e.target._latlng.lng;
+            map.panTo([lat,lng]);
 
           });
+
+          map.addLayer(marker);
+
+        });
       }
 
 
       /**
        * set_zoom_level
-       * @param string location - Location and zoom level to the trail
+       * @param object location - Location and zoom level to the trail
        */
       function set_zoom_level(location) {
 
@@ -247,29 +249,32 @@
 
         map.panTo([lat,lng]).zoomIn(6);
 
-
-
-        map.eachLayer(function(marker){
-          console.log(marker)
-        })
-
-        //loopTrail()
+        loopTrail();
       }
 
 
+      /**
+       * [loopTrail description]
+       * @return {[type]} [description]
+       */
       function loopTrail() {
 
         var i = 0;
         var trailLength = map.trailMarkers.length - 1;
 
+        // start timer loop
         var timer = setInterval(function(){
-
-          console.log(map.trailMarkers[i])
 
           var lat = map.trailMarkers[i].lat;
           var lng = map.trailMarkers[i].lng;
 
           map.panTo([lat,lng]);
+          addActiveMarker(lat,lng);
+
+          var id = map.trailMarkers[i].id;
+          var title = map.trailMarkers[i].title;
+          updateTrailPanel(id , title,  '');
+          $('.pcw-sidebar-extra').animate({'left':'0'},100);
           
           if(i == trailLength) {
             clearInterval(timer);
@@ -278,8 +283,47 @@
           i++;
 
         },3000);
+  
+      }
 
-        
+
+      /**
+       * Change marker colour
+       * @param int lat - latitude of the marker
+       * @param int lng - longitude of the marker
+       */
+      function addActiveMarker(lat,lng) {
+
+        // remove previous marker if it exists
+        if(typeof hightlight_marker != 'undefined') {
+          map.removeLayer(hightlight_marker);
+        }
+
+        hightlight_marker = L.marker(new L.LatLng( lat,lng ), {
+            icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': '#ff0000'}),
+            opacity: 1
+        });
+        map.addLayer(hightlight_marker);  
+
+      }
+
+
+      /**
+       * Update side panel with information about the item
+       * @param  int id - item id
+       * @param  string title - item description
+       * @param  string image - item image
+       * @return null
+       */
+      function updateTrailPanel(id,title,image) {
+
+        $('#pcw-sidebar-extra-title').html(title);
+        $('.pcw-sidebar-extra-href').attr('href' , 'http://www.peoplescollection.wales/node/'+id);
+
+        var rand = Math.floor(Math.random() * 10) + 1  
+
+        $('#pcw-sidebar-extra-image').html('<img src="http://lorempixel.com/335/20'+rand+'/" alt="random image" />');
+
       }
 
 
@@ -287,13 +331,18 @@
        * Handle click events for markers on a trail
        * @param  string id - id of the item
        * @param  string title - title of the item
+       * @param  object location - location object, contains lat and lng
        * @return null
        */
-      function trailItemClick(id,title) {
-        console.log(id + ' ' + title)
+      function trailItemClick(id,title, location) {
+
+        addActiveMarker(location.lat, location.lng);
+        updateTrailPanel(id,title,'');
+
       }
 
     }
+    
 
    /*******************************************************************************************************/
    /**
